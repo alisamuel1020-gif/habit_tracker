@@ -1,8 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Habit Tracker</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-<h2>Register</h2>
-<form method="POST">
-    <input type="text" name="username" placeholder="Username" required><br><br>
-    <input type="password" name="password" placeholder="Password" required><br><br>
-    <button type="submit">Register</button>
-</form>
-<p>Already registered? <a href="/login">Login</a></p>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .auth-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 380px;
+        }
+
+        .auth-card h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .form-group input:focus {
+            border-color: #2e7d32;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn-submit:hover {
+            background-color: #1b5e20;
+        }
+
+        .auth-footer {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .auth-footer a {
+            color: #2e7d32;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="auth-card">
+        <h2>Register</h2>
+        <form action="/register" method="POST">
+            <div class="form-group">
+                <input type="text" name="username" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn-submit">Register</button>
+        </form>
+        <div class="auth-footer">
+            Already registered? <a href="/login">Login</a>
+        </div>
+    </div>
+
+</body>
+</html>
